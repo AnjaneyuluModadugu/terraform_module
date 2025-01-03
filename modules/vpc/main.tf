@@ -35,9 +35,7 @@ resource "aws_subnet" "public_subnet_az1" {
 }
 
 # create nat gateway and attach it to vpc
-resource "aws_eip" "nat" {
-  vpc = true
-}
+resource "aws_eip" "nat" {}
 
 resource "aws_nat_gateway" "nat_gw" {
   allocation_id = aws_eip.nat.id
